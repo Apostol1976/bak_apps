@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+    {% load static %}
+ 
+{% block content %}
+<div><h1 class="mt-5 pt-5 text-light text-center"><strong>{{ content }}</strong></h1></div> 
+{% endblock content %}
+
+{% block catalog %}
+<div class="row mt-1 position-fixed z-3"> 
+    <!-- Каталог -->
+     <div class="dropdown mb-2">
+        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Каталог
+            <img class="mx-1" src="{% static "/icons/grid-fill.svg"%}" alt="Catalog Icon" width="16"
+                height="16">
+        </button>
+
+        <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+          {% for katal  in catalog  %}
+                <li><a class="dropdown-item text-white" href="{% url "main:index"%}">{{ katal.name }}</a></li>
+                {% endfor %}
+           
+    
+        </ul>
+      </div> 
+    </div>
+{% endblock catalog %}
+
+
+    
+
+   
