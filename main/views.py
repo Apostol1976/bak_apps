@@ -28,3 +28,12 @@ def about(request):
        
     }
     return render(request,'main/about.html', context)
+
+
+def contact(request):
+    context = {
+        'content':'Контактная информация',
+        'text_on_page':'Адрес: Латвия, г. Рига, ул. Бривибас, д. 100, офис 20',
+       
+    }
+    return render(request,'main/contact.html', context)
